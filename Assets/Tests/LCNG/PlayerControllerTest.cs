@@ -15,7 +15,7 @@ public class PlayerControllerTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        goal = MainTree.Instance.transform.position;
+        Debug.Log(MainTree.Instance);
     }
 
     // Update is called once per frame
@@ -24,18 +24,26 @@ public class PlayerControllerTest : MonoBehaviour
         agent.SetDestination(goal);
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
         Debug.Log("acaacsd");
-        if (collision.gameObject.tag == "Tree")
+        if (other.gameObject.tag == "Tree")
         {
-            goal = collision.gameObject.transform.position;
+            goal = other.gameObject.transform.position;
         }
+    }
+
+    private void OnTriggerStay(Collision collision)
+    {
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Tree")
+}
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.gameObject.tag == "Tree")
         {
             goal = MainTree.Instance.transform.position;
         }

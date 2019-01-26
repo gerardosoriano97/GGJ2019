@@ -21,18 +21,6 @@ public class Tree : MonoBehaviour
         
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Tree")
-        {
-
-        }
-        else
-        {
-
-        }
-    }
-
     private void OnDestroy()
     {
         Items.Remove(this);
