@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class Spawner : MonoBehaviour
 {
     IEnumerator spawnRoutine;
@@ -12,6 +12,8 @@ public class Spawner : MonoBehaviour
     public GameObject prefab;
     public int poolSize = 10;
     public List<GameObject> pool;
+
+    public UnityEvent OnSpawn;
     void Start()
     {
         pool = new List<GameObject>(); 
@@ -38,6 +40,7 @@ public class Spawner : MonoBehaviour
             GameObject go = GetFromPool();
             if (go != null) {
                 go.transform.position = dir * radius;
+                OnSpawn?.Invoke();
             }
             yield return new WaitForSeconds(spawnDelay + Random.Range(-spawnVariation, spawnVariation));
         }
