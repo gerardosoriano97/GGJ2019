@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 7885709884017319123}
   - component: {fileID: 7885709884017319122}
   - component: {fileID: 7885709884017319133}
+  - component: {fileID: 3480332314033393260}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -153,8 +154,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 16
-  GaiaCry:
+--- !u!114 &3480332314033393260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7885709884017319132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fc6460fc93e444ab5b835827874b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gaiaCry:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: GaiaCry, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  cryCooldown: 3
