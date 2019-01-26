@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BearMovement : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class BearMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Movement();        
+    }
+
+    void Movement() {
         Vector3 cameraRight = Camera.main.transform.TransformDirection(Vector3.right);
         Vector3 cameraFront = Camera.main.transform.TransformDirection(Vector3.forward); 
         cameraRight.y = 0;
