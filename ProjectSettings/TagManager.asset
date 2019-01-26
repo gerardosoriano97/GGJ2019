@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tree
   - MainTree
+  - Lumberjack
   layers:
   - Default
   - TransparentFX

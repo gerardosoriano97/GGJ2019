@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerControllerTest : MonoBehaviour
+public class Lumberjack : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Vector3 goal;
-    public static PlayerControllerTest Instance { get; private set; }
+    public static Lumberjack Instance { get; private set; }
     private void Awake()
     {
         Instance = this;
@@ -15,7 +15,7 @@ public class PlayerControllerTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(MainTree.Instance);
+
     }
 
     // Update is called once per frame
@@ -26,20 +26,12 @@ public class PlayerControllerTest : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("acaacsd");
         if (other.gameObject.tag == "Tree")
         {
             goal = other.gameObject.transform.position;
         }
     }
 
-    private void OnTriggerStay(Collision collision)
-    {
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-}
     private void OnTriggerExit(Collider other)
     {
 
