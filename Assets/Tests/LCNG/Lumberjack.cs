@@ -10,7 +10,14 @@ public class Lumberjack : MonoBehaviour
     public static Lumberjack Instance { get; private set; }
     public Tree Target { get; private set; } = null;
 
+    public bool Flee { get; private set; } = false;
+    public bool Scared { get; private set; } = false;
+
+    public float velocityMultiplier = 0.5f;
+
     public Ticker attackTimer;
+
+    public Animator animator;
 
     private void Awake()
     {
@@ -52,6 +59,17 @@ public class Lumberjack : MonoBehaviour
             GotoCenter();
         }
         agent.SetDestination(goal);
+        UpdateAnimator();
+    }
+
+    void UpdateAnimator()
+    {
+        float agentSpeed = agent.velocity.magnitude;
+        // agent.velocity.magnitude
+        animator.SetFloat("speed", agentSpeed);
+        animator.SetBool("scared", Scared);
+        animator.SetBool("flee", Flee);
+        animator.SetFloat("speedMultiplier", 0.5f + agent.velocity.magnitude * velocityMultiplier);
     }
 
     private void OnTriggerStay(Collider other)
