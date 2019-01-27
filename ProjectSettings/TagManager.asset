@@ -7,6 +7,7 @@ TagManager:
   - Tree
   - MainTree
   - Lumberjack
+  - BearShout
   layers:
   - Default
   - TransparentFX
