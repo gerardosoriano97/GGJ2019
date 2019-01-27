@@ -17,9 +17,11 @@ public class Animal : MonoBehaviour
 
     public GaiaSpecie specie;
     public IEnumerator attackRoutine;
-    public GameObject target;
+    public GameObject target = null;
     public float attackSpeed = 1.0f;
     public float knockback = 5.0f;
+
+    public GameObject shout;
 
     void Start()
     {
@@ -29,7 +31,8 @@ public class Animal : MonoBehaviour
     void Update()
     {
         if (attending) {
-            if (agent.remainingDistance < 0.0f) {
+            Debug.Log(agent.remainingDistance);
+            if (agent.remainingDistance <= 1.0f) {
                 attending = false;
             }
         }
@@ -40,7 +43,7 @@ public class Animal : MonoBehaviour
 
     void OnTriggerEnter(Collider collider) {
         Lumberjack lumber = collider.gameObject.GetComponent<Lumberjack>();
-        if (lumber != null && target != null) {
+        if (lumber != null) {
             target = lumber.gameObject;
             attackRoutine = AttackRoutine();
             StartCoroutine(attackRoutine);
@@ -64,13 +67,14 @@ public class Animal : MonoBehaviour
 
     IEnumerator AttackRoutine() {
         while (true) {
-            yield return new WaitForSeconds(attackSpeed);
-            if (attending && !target.activeInHierarchy || target == null) yield break;
+            if (attending || target == null) yield break;
+            Debug.Log("Attack");
             Attack();
+            yield return new WaitForSeconds(attackSpeed);
         }
     }
 
     public void Attack() {
-        Debug.Log("Attack");
+        AnimalShout.Emmit(transform.gameObject, shout, transform.forward);
     }
 }

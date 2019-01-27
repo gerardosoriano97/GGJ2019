@@ -9,6 +9,7 @@ public class Lumberjack : MonoBehaviour
     public Vector3 goal;
     public static Lumberjack Instance { get; private set; }
     public Tree Target { get; private set; } = null;
+    public float scareTime = 1.0f;
 
     public bool Flee { get; private set; } = false;
     public bool Scared { get; private set; } = false;
@@ -16,8 +17,12 @@ public class Lumberjack : MonoBehaviour
     public float velocityMultiplier = 0.5f;
 
     public Ticker attackTimer;
+    public Timer scaredTimer;
 
     public Animator animator;
+
+    public Vector3 ScaredGoal { get; private set; }
+    Vector3 currentScaredVelocity = Vector3.zero;
 
     private void Awake()
     {
@@ -59,9 +64,28 @@ public class Lumberjack : MonoBehaviour
             GotoCenter();
         }
         agent.SetDestination(goal);
+        transform.LookAt(goal);
+        UpdateScaring();
         UpdateAnimator();
     }
+    void UpdateScaring()
+    {
+        if (Scared) {
+            agent.Warp(
+                Vector3.SmoothDamp(
+                    transform.position, 
+                    ScaredGoal, 
+                    ref currentScaredVelocity, 
+                    1.0f
+                    )
+                 );
 
+            if (Vector3.Distance(transform.position, ScaredGoal) < 0.1f)
+            {
+                ResetToNormal();
+            }
+        }
+    }
     void UpdateAnimator()
     {
         float agentSpeed = agent.velocity.magnitude;
@@ -105,6 +129,21 @@ public class Lumberjack : MonoBehaviour
     public void GotoCenter()
     {
         goal = MainTree.Center;
+    }
+
+    public void Push(AnimalShout shout)
+    {
+        if (!Scared) {
+            Scared = true;
+            scaredTimer.Start(this);
+            ScaredGoal = transform.position + (shout.Direction * shout.pushForce);
+        }
+    }
+
+    public void ResetToNormal()
+    {
+        currentScaredVelocity = Vector3.zero;
+        Scared = false;
     }
 
     public bool HaveTarget
