@@ -1503,6 +1503,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1623796894}
+  effectToSpawn: {fileID: 3793794248779575121, guid: 08b895d9e47475c46994e191d2fe645a,
+    type: 3}
 --- !u!114 &1927548541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1515,8 +1517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586e8f262236f174eafd32472f0b0213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectToSpawn: {fileID: 3793794248779575121, guid: 08b895d9e47475c46994e191d2fe645a,
-    type: 3}
 --- !u!1001 &2136553657
 PrefabInstance:
   m_ObjectHideFlags: 0

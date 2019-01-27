@@ -6,6 +6,7 @@ public class ChildSpawnExample : MonoBehaviour
 {
 
     public Transform target;
+    public GameObject effectToSpawn;
     SpawnVFX spawner;
 
     // Start is called before the first frame update
@@ -18,7 +19,7 @@ public class ChildSpawnExample : MonoBehaviour
     void Update()
     {
         if( Input.GetMouseButtonDown(0) ) {
-            spawner.SpawnAsChild(target, Quaternion.identity, false);
+            spawner.SpawnAsChild(effectToSpawn, target, Quaternion.identity, false);
         }
     }
 }
