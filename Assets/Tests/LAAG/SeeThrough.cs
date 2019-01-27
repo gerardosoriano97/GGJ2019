@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,19 +33,25 @@ public class SeeThrough : MonoBehaviour
             hits = Physics.CapsuleCastAll(transform.position, transform.position, 0.5f, dir, dif.magnitude, layer.value, includeTriggers);
             //hits = Physics.RaycastAll(transform.position, dir, dif.magnitude, layer, includeTriggers);
             foreach( RaycastHit hit in hits) {
-                GameObject other = hit.collider.gameObject; 
-                MeshRenderer mr = other.GetComponent<MeshRenderer>();
-                if(mr == null)
+                AutoTransparent autoT = hit.collider.gameObject.GetComponentInChildren<AutoTransparent>();
+
+                if (autoT == null)
+                {
+                    continue;
+                }
+
+                GameObject other = autoT.gameObject;
+                MeshRenderer mr =  other.GetComponent<MeshRenderer>();
+                
+                if (mr == null)
                     continue;
 
                 //Debug.Log("Hitted something rendereable");
-
-                AutoTransparent autoTransparent = other.GetComponent<AutoTransparent>();
-                if(autoTransparent != null && !autoTransparent.isTransparent) {
+                if(autoT != null && !autoT.isTransparent) {
 
                     float distance = Vector3.Distance(transform.position, other.transform.position);
 
-                    autoTransparent.EnableTransparency(distance);
+                    autoT.EnableTransparency(distance);
                     if(!transparentHistory.Contains(other)) {
                         transparentHistory.Add(other);
                     }
@@ -52,20 +59,32 @@ public class SeeThrough : MonoBehaviour
 
             }
 
-            foreach(GameObject ct in transparentHistory) {
+            foreach (GameObject ct in transparentHistory)
+            {
                 bool active = false;
-                foreach(RaycastHit hit in hits){
-                    if(ct == hit.collider.gameObject) {
+                foreach (RaycastHit hit in hits)
+                {
+                    AutoTransparent autoT = hit.collider.gameObject.GetComponentInChildren<AutoTransparent>();
+                    if (autoT == null) continue;
+                    GameObject other = autoT.gameObject;
+                    if (ct == other)
+                    {
                         active = true;
                         break;
                     }
                 }
-                if(!active){
-                    ct.GetComponent<AutoTransparent>().DisableTransparency();
+                if (!active)
+                {
+                    try
+                    {
+                        ct?.GetComponent<AutoTransparent>()?.DisableTransparency();
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
                 }
             }
-
-
         }
     }
 }

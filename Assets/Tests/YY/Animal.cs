@@ -37,6 +37,9 @@ public class Animal : MonoBehaviour
     public float outline = 0.035f;
     public Color outlineColor;
 
+    SpawnVFX spawnVFX;
+    public GameObject vfx_shout;
+
     void Start()
     {
         GetComponentInChildren<Renderer>().material.SetColor("_OutlienColor", outlineColor);
@@ -44,6 +47,8 @@ public class Animal : MonoBehaviour
         BearCry.Instance.gaiaCry.AddListener(GaiaAttend);
         BearCry.Instance.outlineIn.AddListener(OutlineIn);
         BearCry.Instance.outlineOut.AddListener(OutlineOut);
+
+        spawnVFX = GetComponent<SpawnVFX>();
     }
     // Update is called once per frame
     void Update()
@@ -109,5 +114,10 @@ public class Animal : MonoBehaviour
 
     public void Attack() {
         AnimalShout.Emmit(transform.gameObject, shout, transform.forward);
+        if (spawnVFX != null && vfx_shout != null)
+        {
+            spawnVFX.Spawn(vfx_shout, transform.position, Quaternion.LookRotation(transform.forward), true);
+        }
+
     }
 }
