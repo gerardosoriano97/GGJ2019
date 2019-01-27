@@ -7,6 +7,9 @@ public class Lumberjack : MonoBehaviour
 {
     public UnityEvent OnAttackTree;
     public AudioSource hitSound;
+    public AudioSourceExtend scaredSound;
+    public AudioSourceRandomizer enterSound;
+    public AudioSource mix;
     public NavMeshAgent agent;
     public Vector3 goal;
     public static Lumberjack Instance { get; private set; }
@@ -38,7 +41,13 @@ public class Lumberjack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach (var sound in enterSound.audioSources)
+        {
+            sound.pitch = Random.Range(0.95f, 1.1f);
+        }
+        enterSound.Play();
         attackTimer.Start(this);
+        mix.Play();
         initialCenter = MainTree.Center + new Vector3(
             Random.Range(-1.0f,1.0f),
             Random.Range(-1.0f,1.0f),
@@ -169,7 +178,7 @@ public class Lumberjack : MonoBehaviour
             Scared = true;
             scaredTimer.Start(this);
             ScaredGoal = transform.position + (shout.Direction * shout.pushForce);
-
+            PlayScaredSound();
             if (shout.gameObject.tag == "BearShout") {
                 hp -= bearDmg;
             } else {
@@ -181,6 +190,12 @@ public class Lumberjack : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    public void PlayScaredSound()
+    {
+        //scaredSound.pitch = Random.Range(0.6f, 0.7f);
+        scaredSound.Play();
     }
 
     public void ResetToNormal()
