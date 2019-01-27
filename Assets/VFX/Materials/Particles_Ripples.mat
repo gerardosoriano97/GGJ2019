@@ -33,7 +33,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _ChromaticAberration: 0.2692
-    - _NormalIntencity: 0.425
+    - _NormalIntencity: 0.223
     - _RefractionValue: 0.5
     - _RotationSpeed: 5
     - _Value: 0
