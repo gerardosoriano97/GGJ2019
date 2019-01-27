@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestSpawnLogic : MonoBehaviour
+public class HitSpawnExample : MonoBehaviour
 {
 
     public Transform target;
+    public bool destroyOnFinish = true;
     SpawnVFX spawner;
 
     // Start is called before the first frame update
@@ -23,7 +24,7 @@ public class TestSpawnLogic : MonoBehaviour
             Vector3 dir = (transform.position - target.position).normalized;
             Vector3 position = target.position + (dir * offsetFromCenter);
 
-            spawner.Spawn(position, Quaternion.LookRotation(dir));
+            spawner.Spawn(position, Quaternion.LookRotation(dir), destroyOnFinish);
         }
     }
 }
