@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shaker : MonoBehaviour
 {
+    public bool isLocal = false;
     public float duration = 1.0f;
     public float peakIntensity = 1.0f;
     public float GoalIntensity { get; private set; } = 0.0f;
@@ -13,7 +14,10 @@ public class Shaker : MonoBehaviour
     float startTime = 0.0f;
     private void Awake()
     {
-        OriginalPos = transform.position;
+        if(!isLocal)
+            OriginalPos = transform.position;
+        else
+            OriginalPos = transform.localPosition;
     }
 
     // Start is called before the first frame update
@@ -23,11 +27,14 @@ public class Shaker : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         float t = (Time.time - startTime) / duration;
         CurrentIntensity = Mathf.SmoothStep(CurrentIntensity, 0.0f, t);
-        transform.position = OriginalPos + NextShake;
+        if(!isLocal)
+            transform.position = OriginalPos + NextShake;
+        else
+            transform.localPosition = OriginalPos + NextShake;
     }
 
     public void Shake()
