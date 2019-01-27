@@ -14,6 +14,9 @@ public class BearMovement : MonoBehaviour
     public float CurrentSpeed { get; private set; }
 
     public UnityEvent Roar;
+    public IEnumerator shoutCooldownRoutine;
+    public float shoutCooldown = 3.0f;
+    public bool canShout = true;
 
     public GameObject bearShout;
     public Animator anim;
@@ -48,7 +51,9 @@ public class BearMovement : MonoBehaviour
     }
     void CheckInput()
     {
-        if (Input.GetAxis("GaiaRoar") > 0.0f) {
+        if (Input.GetAxis("GaiaRoar") > 0.0f && canShout) {
+            shoutCooldownRoutine = ShoutCooldown();
+            StartCoroutine(shoutCooldownRoutine);
             AnimalShout.Emmit(gameObject, bearShout, LookDirection);
             Roar?.Invoke();
             anim.SetTrigger("attacking");
@@ -75,5 +80,11 @@ public class BearMovement : MonoBehaviour
     {
         CurrentSpeed = slowSpeed;
         slowTimer.Restart(this);
+    }
+
+    public IEnumerator ShoutCooldown() {
+        canShout = false;
+        yield return new WaitForSeconds(shoutCooldown);
+        canShout = true;
     }
 }
