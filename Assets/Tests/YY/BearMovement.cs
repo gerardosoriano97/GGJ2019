@@ -13,6 +13,8 @@ public class BearMovement : MonoBehaviour
     public Timer slowTimer;
     public float CurrentSpeed { get; private set; }
 
+    public UnityEvent Roar;
+
     public GameObject bearShout;
 
     // Start is called before the first frame update
@@ -45,6 +47,7 @@ public class BearMovement : MonoBehaviour
     {
         if (Input.GetAxis("GaiaRoar") > 0.0f) {
             AnimalShout.Emmit(gameObject, bearShout, LookDirection);
+            Roar?.Invoke();
         }
     }
     void Look()

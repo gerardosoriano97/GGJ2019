@@ -3664,6 +3664,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7885709884017319133, guid: 5ccc943002f45ce4caf2d2a81247eb46,
         type: 3}
+      propertyPath: Roar.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885709884017319133, guid: 5ccc943002f45ce4caf2d2a81247eb46,
+        type: 3}
       propertyPath: speed
       value: 30
       objectReference: {fileID: 0}
@@ -3713,6 +3718,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2585365835443352065, guid: 17000e8553b21fe4288cf042b501d5e8,
         type: 3}
+    - target: {fileID: 7885709884017319133, guid: 5ccc943002f45ce4caf2d2a81247eb46,
+        type: 3}
+      propertyPath: Roar.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885709884017319133, guid: 5ccc943002f45ce4caf2d2a81247eb46,
+        type: 3}
+      propertyPath: Roar.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885709884017319133, guid: 5ccc943002f45ce4caf2d2a81247eb46,
+        type: 3}
+      propertyPath: Roar.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885709884017319133, guid: 5ccc943002f45ce4caf2d2a81247eb46,
+        type: 3}
+      propertyPath: Roar.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Shake
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885709884017319133, guid: 5ccc943002f45ce4caf2d2a81247eb46,
+        type: 3}
+      propertyPath: Roar.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3480332314033393260, guid: 5ccc943002f45ce4caf2d2a81247eb46,
         type: 3}
       propertyPath: gaiaCry.m_PersistentCalls.m_Calls.Array.size

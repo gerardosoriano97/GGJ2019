@@ -86,6 +86,7 @@ public class Lumberjack : MonoBehaviour
             }
         }
     }
+
     void UpdateAnimator()
     {
         float agentSpeed = agent.velocity.magnitude;
@@ -148,4 +149,6 @@ public class Lumberjack : MonoBehaviour
 
     public bool HaveTarget
         => Target != null;
+
+
 }
