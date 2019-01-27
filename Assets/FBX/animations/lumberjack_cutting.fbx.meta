@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: fbabcac8b34095c4da6e4c079a406e96
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: axe_big
+    100002: axe_big 1
+    100004: hip_jnt
+    100006: l_ankle_jnt
+    100008: l_armEnd_jnt
+    100010: l_feet_jnt
+    100012: l_feetEnd_jnt
+    100014: l_hand_jnt
+    100016: l_knee_jnt
+    100018: l_lowerArm_jnt
+    100020: l_shoulder_jnt
+    100022: l_upperArm_jnt
+    100024: l_upperLeg_jnt
+    100026: //RootNode
+    100028: lumberjack_full
+    100030: neck_jnt
+    100032: polySurface2
+    100034: r_ankle_jnt
+    100036: r_armEnd_jnt
+    100038: r_feet_jnt
+    100040: r_feetEnd_jnt
+    100042: r_hand_jnt
+    100044: r_knee_jnt
+    100046: r_lowerArm_jnt
+    100048: r_shoulder_jnt
+    100050: r_upperArm_jnt
+    100052: r_upperLeg_jnt
+    100054: spine_A_jnt
+    100056: spine_B_jnt
+    100058: top_head_jnt
+    100060: transform1
+    100062: transform2
+    100064: transform3
+    400000: axe_big
+    400002: axe_big 1
+    400004: hip_jnt
+    400006: l_ankle_jnt
+    400008: l_armEnd_jnt
+    400010: l_feet_jnt
+    400012: l_feetEnd_jnt
+    400014: l_hand_jnt
+    400016: l_knee_jnt
+    400018: l_lowerArm_jnt
+    400020: l_shoulder_jnt
+    400022: l_upperArm_jnt
+    400024: l_upperLeg_jnt
+    400026: //RootNode
+    400028: lumberjack_full
+    400030: neck_jnt
+    400032: polySurface2
+    400034: r_ankle_jnt
+    400036: r_armEnd_jnt
+    400038: r_feet_jnt
+    400040: r_feetEnd_jnt
+    400042: r_hand_jnt
+    400044: r_knee_jnt
+    400046: r_lowerArm_jnt
+    400048: r_shoulder_jnt
+    400050: r_upperArm_jnt
+    400052: r_upperLeg_jnt
+    400054: spine_A_jnt
+    400056: spine_B_jnt
+    400058: top_head_jnt
+    400060: transform1
+    400062: transform2
+    400064: transform3
+    2100000: mat_axe
+    2100002: mat_hair
+    2100004: mat_axe_2
+    2100006: mat_pants
+    2100008: mat_shirt
+    2100010: mat_hat
+    2100012: mat_skin
+    2100014: mat_boots
+    2100016: lambert1
+    2100018: mat_sleeve
+    2300000: axe_big
+    3300000: axe_big
+    4300000: axe_big
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 65
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
