@@ -21,6 +21,8 @@ public class Animal : MonoBehaviour
     public float attackSpeed = 1.0f;
     public float knockback = 5.0f;
 
+    public GameObject shout;
+
     void Start()
     {
         BearCry.Instance.gaiaCry.AddListener(GaiaAttend);
@@ -30,7 +32,7 @@ public class Animal : MonoBehaviour
     {
         if (attending) {
             Debug.Log(agent.remainingDistance);
-            if (agent.remainingDistance <= 2.0f) {
+            if (agent.remainingDistance <= 1.0f) {
                 attending = false;
             }
         }
@@ -65,13 +67,14 @@ public class Animal : MonoBehaviour
 
     IEnumerator AttackRoutine() {
         while (true) {
-            yield return new WaitForSeconds(attackSpeed);
-            if (attending && !target.activeInHierarchy || target == null) yield break;
+            if (attending || target == null) yield break;
+            Debug.Log("Attack");
             Attack();
+            yield return new WaitForSeconds(attackSpeed);
         }
     }
 
     public void Attack() {
-        Debug.Log("Attack");
+        AnimalShout.Emmit(transform.gameObject, shout, transform.forward);
     }
 }

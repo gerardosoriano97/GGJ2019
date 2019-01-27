@@ -43,8 +43,7 @@ public class BearMovement : MonoBehaviour
     }
     void CheckInput()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
+        if (Input.GetAxis("GaiaRoar") > 0.0f) {
             AnimalShout.Emmit(gameObject, bearShout, LookDirection);
         }
     }
