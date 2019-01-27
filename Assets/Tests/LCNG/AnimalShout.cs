@@ -38,7 +38,12 @@ public class AnimalShout : MonoBehaviour
 
     public static void Emmit(GameObject parent, GameObject shoutPrefab, Vector3 direction)
     {
-        var shout = Instantiate(shoutPrefab, parent.transform.position, Quaternion.identity).GetComponent<AnimalShout>();
-        shout.Direction = direction;
+        if (shoutPrefab != null && parent != null) {
+            var shout = Instantiate(shoutPrefab, parent.transform.position, Quaternion.identity).GetComponent<AnimalShout>();
+            if (shout != null) {
+                shout.transform.position += shout.Direction * shout.transform.localScale.x * 0.7f;
+                shout.Direction = direction;
+            }
+        }
     }
 }

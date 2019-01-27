@@ -64,6 +64,7 @@ public class Lumberjack : MonoBehaviour
             GotoCenter();
         }
         agent.SetDestination(goal);
+        transform.LookAt(goal);
         UpdateScaring();
         UpdateAnimator();
     }
