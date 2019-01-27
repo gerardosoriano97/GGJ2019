@@ -71,8 +71,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _HeightCutoff: 10.39
-    - _HeightFactor: 9.23
+    - _HeightCutoff: 0.3
+    - _HeightFactor: 0.3
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -81,11 +81,11 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaveAmp: 7.46
-    - _WaveSpeed: 8.33
+    - _WaveAmp: 0.8
+    - _WaveSpeed: 1
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.34509805, g: 0.69411767, b: 0.10588236, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _WindSpeed: {r: 4.8, g: 4.36, b: 4.3, a: 1}
-    - _WorldSize: {r: 10, g: 1, b: 10, a: 1}
+    - _WindSpeed: {r: 4, g: 1, b: 4, a: 1}
+    - _WorldSize: {r: 1, g: 1, b: 1, a: 1}
