@@ -223,6 +223,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8765117558030195227, guid: b623409dc5d0c484cb19a942892d889d,
+        type: 3}
+      propertyPath: soundCooldown.event.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765117558030195227, guid: b623409dc5d0c484cb19a942892d889d,
+        type: 3}
+      propertyPath: soundCooldown.event.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765117558030195227, guid: b623409dc5d0c484cb19a942892d889d,
+        type: 3}
+      propertyPath: soundCooldown.event.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765117558030195227, guid: b623409dc5d0c484cb19a942892d889d,
+        type: 3}
+      propertyPath: soundCooldown.event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1104203891677050042}
+    - target: {fileID: 8765117558030195227, guid: b623409dc5d0c484cb19a942892d889d,
+        type: 3}
+      propertyPath: soundCooldown.event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetHitSoundCooldown
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765117558030195227, guid: b623409dc5d0c484cb19a942892d889d,
+        type: 3}
+      propertyPath: soundCooldown.event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765117558030195227, guid: b623409dc5d0c484cb19a942892d889d,
+        type: 3}
+      propertyPath: soundCooldown.time
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b623409dc5d0c484cb19a942892d889d, type: 3}
 --- !u!4 &697632375046535586 stripped
@@ -231,3 +266,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8570658419876196001}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1104203891677050042 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8765117558030195227, guid: b623409dc5d0c484cb19a942892d889d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8570658419876196001}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73fc4d08990b4543aa014c62f8c88e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

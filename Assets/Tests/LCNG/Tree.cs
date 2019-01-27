@@ -13,6 +13,8 @@ public class Tree : MonoBehaviour
     public Collider trigger;
     public Timer dieTimer;
     public UnityEvent OnFall;
+    public Timer soundCooldown;
+    public bool CanPlaySound { get; private set; } = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +37,8 @@ public class Tree : MonoBehaviour
 
     public void Hit(Lumberjack lumberjack)
     {
-
+        CanPlaySound = false;
+        soundCooldown.Start(this);
         // VFX RED REACTION
 
         health--;
@@ -63,6 +66,11 @@ public class Tree : MonoBehaviour
         rigidbody.AddForceAtPosition(sideVec * dieForce, dieForceOffset, ForceMode.Impulse);
         dieTimer.Start(this);
         OnFall?.Invoke();
+    }
+
+    public void ResetHitSoundCooldown()
+    {
+        CanPlaySound = true;
     }
 
     public bool IsDead

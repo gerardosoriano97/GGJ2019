@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.Events;
 public class Lumberjack : MonoBehaviour
 {
+    public UnityEvent OnAttackTree;
+    public AudioSource hitSound;
     public NavMeshAgent agent;
     public Vector3 goal;
     public static Lumberjack Instance { get; private set; }
@@ -48,7 +50,16 @@ public class Lumberjack : MonoBehaviour
     {
         if (HaveTarget)
         {
-            Target.Hit(this);
+            if (!Scared)
+            {
+                if (Target.CanPlaySound)
+                {
+                    hitSound.pitch = Random.Range(1.0f, 2.0f);
+                    hitSound.Play();
+                }
+                Target.Hit(this);
+                OnAttackTree?.Invoke();
+            }
             if (Target.IsDead)
             {
                 GotoCenter();
@@ -180,6 +191,4 @@ public class Lumberjack : MonoBehaviour
 
     public bool HaveTarget
         => Target != null;
-
-
 }
