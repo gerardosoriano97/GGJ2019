@@ -38,15 +38,19 @@ public class BearCry : MonoBehaviour
             // VFX SHOW OUTLINE ON ENTITIES
 
             if (Input.GetAxis("Fire1") > 0.0f) {
+                //Sonido de venado
                 gaiaCry?.Invoke(0);
             }
             if (Input.GetAxis("Fire2") > 0.0f) {
+                //Sonido de venado
                 gaiaCry?.Invoke(1);
             }
             if (Input.GetAxis("Fire3") > 0.0f) {
+                //Sonido de mapache
                 gaiaCry?.Invoke(2);
             }
             if (Input.GetAxis("Jump") > 0.0f) {
+                //Sonido de mapache
                 gaiaCry?.Invoke(3);
             }
         }
