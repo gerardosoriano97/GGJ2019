@@ -29,7 +29,7 @@ public class SeeThrough : MonoBehaviour
             Vector3 dir = dif.normalized;
 
             RaycastHit[] hits;
-            hits = Physics.CapsuleCastAll(transform.position, transform.position, 2.0f, dir, dif.magnitude, layer.value, includeTriggers);
+            hits = Physics.CapsuleCastAll(transform.position, transform.position, 0.5f, dir, dif.magnitude, layer.value, includeTriggers);
             //hits = Physics.RaycastAll(transform.position, dir, dif.magnitude, layer, includeTriggers);
             foreach( RaycastHit hit in hits) {
                 GameObject other = hit.collider.gameObject; 

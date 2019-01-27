@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Outline Diffuse
-  m_Shader: {fileID: 4800000, guid: ce91d6ae336f6ef41b35bedc8024af6a, type: 3}
+  m_Name: LeafsBits
+  m_Shader: {fileID: 4800000, guid: 2de3245230515c74b9213e2892525b1d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -18,18 +18,9 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - _TextureSample0:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _texcoord:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Floats:
-    - _Outline: 0.11
     - __dirty: 0
     m_Colors:
-    - _OutlienColor: {r: 0, g: 0, b: 0, a: 0}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.115245625, g: 0.7830189, b: 0, a: 0}
+    - _Color0: {r: 0.5943396, g: 0.34683415, b: 0, a: 0}
