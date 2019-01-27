@@ -13,6 +13,8 @@ public class BearMovement : MonoBehaviour
     public Timer slowTimer;
     public float CurrentSpeed { get; private set; }
 
+    public AudioSourceExtend roarSound;
+
     public UnityEvent Roar;
     public IEnumerator shoutCooldownRoutine;
     public float shoutCooldown = 3.0f;
@@ -21,12 +23,17 @@ public class BearMovement : MonoBehaviour
     public GameObject bearShout;
     public Animator anim;
 
+    public GameObject vfx_shout;
+    SpawnVFX spawnVFX;
+    public Transform vfx_spawnPoint;
+
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
         CurrentSpeed = speed;
         anim = GetComponentInChildren<Animator>();
+        spawnVFX = GetComponent<SpawnVFX>();
     }
 
     // Update is called once per frame
@@ -56,6 +63,12 @@ public class BearMovement : MonoBehaviour
             StartCoroutine(shoutCooldownRoutine);
             AnimalShout.Emmit(gameObject, bearShout, LookDirection);
             Roar?.Invoke();
+            roarSound.Play();
+
+            if(spawnVFX != null && vfx_shout != null){
+                spawnVFX.Spawn(vfx_shout, vfx_spawnPoint.position, Quaternion.LookRotation(LookDirection), true);
+            }
+
             anim.SetTrigger("attacking");
             // VFX SHOUTING????
         }

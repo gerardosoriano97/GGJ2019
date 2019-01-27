@@ -30,6 +30,10 @@ public class Lumberjack : MonoBehaviour
     public Animator animator;
 
     public Vector3 ScaredGoal { get; private set; }
+
+    public GameObject vfx_hit;
+    SpawnVFX spawnVFX;
+
     Vector3 currentScaredVelocity = Vector3.zero;
 
     Vector3 initialCenter;
@@ -53,6 +57,7 @@ public class Lumberjack : MonoBehaviour
             Random.Range(-1.0f,1.0f),
             Random.Range(-1.0f,1.0f)
             );
+        spawnVFX = GetComponent<SpawnVFX>();
     }
 
     public void AttackTree()
@@ -76,6 +81,11 @@ public class Lumberjack : MonoBehaviour
             }
 
             // VFX HIT PARTICLES
+            if(spawnVFX != null && vfx_hit != null) {
+                Vector3 dir = (transform.position - Target.transform.position).normalized;
+                Vector3 position = Target.transform.position + (dir * 0.75f);
+                spawnVFX.Spawn(vfx_hit, position, Quaternion.LookRotation(dir), true);
+            }
 
             
 

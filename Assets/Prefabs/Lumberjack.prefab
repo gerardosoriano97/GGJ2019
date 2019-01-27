@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5549974013702221033}
   - component: {fileID: 8588424604796725875}
   - component: {fileID: 535414053184327858}
+  - component: {fileID: 3196341842477593981}
   m_Layer: 10
   m_Name: Lumberjack
   m_TagString: Lumberjack
@@ -106,6 +107,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     time: 400
   animator: {fileID: 7020079518808229359}
+  vfx_hit: {fileID: 3793794248779575121, guid: 997e284ad14f82e45b50a9eab49769d3, type: 3}
 --- !u!195 &501752431770617268
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -468,6 +470,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3196341842477593981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501752431770617270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 586e8f262236f174eafd32472f0b0213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &265568088890524406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -892,11 +906,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 501752431770617265}
     m_Modifications:
-    - target: {fileID: 347947777262045866, guid: 6891bc0a43ab3cf4f9c655ed41b8f355,
-        type: 3}
-      propertyPath: m_Name
-      value: LumberOuchSFX
-      objectReference: {fileID: 0}
     - target: {fileID: 4399601547857325415, guid: 6891bc0a43ab3cf4f9c655ed41b8f355,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -951,6 +960,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 347947777262045866, guid: 6891bc0a43ab3cf4f9c655ed41b8f355,
+        type: 3}
+      propertyPath: m_Name
+      value: LumberOuchSFX
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6891bc0a43ab3cf4f9c655ed41b8f355, type: 3}
