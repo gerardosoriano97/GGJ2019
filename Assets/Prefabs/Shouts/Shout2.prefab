@@ -64,7 +64,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-    time: 300
+    time: 1000
   pushForce: 5
   speed: 5
 --- !u!135 &2585365835443352064

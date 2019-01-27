@@ -23,6 +23,11 @@ public class Animal : MonoBehaviour
 
     public GameObject shout;
 
+    public Animator animator;
+    public bool Running { get; private set; } = false;
+    public float minRunVal = 0.3f;
+
+
     void Start()
     {
         BearCry.Instance.gaiaCry.AddListener(GaiaAttend);
@@ -36,9 +41,16 @@ public class Animal : MonoBehaviour
                 attending = false;
             }
         }
+        UpdateAnimation();
     }
     void OnDestroy() {
         BearCry.Instance.gaiaCry.RemoveListener(GaiaAttend);
+    }
+
+    void UpdateAnimation()
+    {
+        Running = agent.velocity.magnitude > minRunVal;
+        animator.SetBool("running", Running);
     }
 
     void OnTriggerEnter(Collider collider) {
@@ -68,7 +80,7 @@ public class Animal : MonoBehaviour
     IEnumerator AttackRoutine() {
         while (true) {
             if (attending || target == null) yield break;
-            Debug.Log("Attack");
+            //Debug.Log("Attack");
             Attack();
             yield return new WaitForSeconds(attackSpeed);
         }
