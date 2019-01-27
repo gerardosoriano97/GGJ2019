@@ -48,9 +48,11 @@ public class Spawner : MonoBehaviour
 
     public GameObject GetFromPool() {
         for (int i = 0; i < poolSize; i++) {
-            if (!pool[i].activeInHierarchy) {
-                pool[i].SetActive(true);
-                return pool[i];
+            if (pool[i] != null) {
+                if (!pool[i].activeInHierarchy) {
+                    pool[i].SetActive(true);
+                    return pool[i];
+                }
             }
         }
         return null;

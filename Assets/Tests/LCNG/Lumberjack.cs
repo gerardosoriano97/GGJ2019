@@ -15,6 +15,9 @@ public class Lumberjack : MonoBehaviour
     public bool Scared { get; private set; } = false;
 
     public float velocityMultiplier = 0.5f;
+    public float hp = 5;
+    public float bearDmg = 2;
+    public float animalDmg = 1;
 
     public Ticker attackTimer;
     public Timer scaredTimer;
@@ -150,6 +153,17 @@ public class Lumberjack : MonoBehaviour
             Scared = true;
             scaredTimer.Start(this);
             ScaredGoal = transform.position + (shout.Direction * shout.pushForce);
+
+            if (shout.gameObject.tag == "BearShout") {
+                hp -= bearDmg;
+            } else {
+                hp -= animalDmg;
+            }
+
+            if (hp <= 0) {
+                hp = 0;
+                Destroy(gameObject);
+            }
         }
     }
 
