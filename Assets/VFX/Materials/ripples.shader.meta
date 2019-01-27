@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: b591a9931117ac14981c3a577fd7b9de
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _RefractionMap: {fileID: 2800000, guid: e2f9479433c558243ae57f937d374837, type: 3}
+  - _Opacity: {fileID: 2800000, guid: 28f65f6c1ccd25647805fbaaeda0dc55, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
