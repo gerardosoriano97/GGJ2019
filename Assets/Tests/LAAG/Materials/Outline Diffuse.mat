@@ -19,6 +19,18 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Al:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Albe:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Albedo:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _TextureSample0:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -29,7 +41,30 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Outline: 0.11
+    - _Ve: 0
+    - _Ver: 0
+    - _Verte: 0
+    - _VertexColor: 0
+    - _Vevert: 0
     - __dirty: 0
+    - _al: 0
+    - _albe: 0
+    - _albedo: 0
+    - _albedoC: 0
+    - _albedoOR: 0
+    - _albedoOr: 0
+    - _albedoOrCo: 0
+    - _albedoOrColor: 1
+    - _albedoo: 0
+    - _useAlbedoColor: 0
+    - _useVertexColor: 0
+    - _ve: 0
+    - _vertCo: 0
+    - _vertColorO: 0
+    - _vertColorOrAlbe: 0
+    - _vertColorOrAlbed: 0
+    - _vertColorOrAlbedo: 1
     m_Colors:
+    - _AlbedoColor: {r: 1, g: 0, b: 0, a: 0}
     - _OutlienColor: {r: 0, g: 0, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
