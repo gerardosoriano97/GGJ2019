@@ -5,6 +5,9 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
+# archivos cagonsotes automaticos
+*.unitypackage.meta
+
 # Visual Studio cache directory
 .vs/
 
