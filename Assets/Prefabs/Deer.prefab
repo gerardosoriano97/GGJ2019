@@ -127,6 +127,8 @@ MonoBehaviour:
   shout: {fileID: 2585365835443352065, guid: 835b562cdb4b5634ab9743dc2ed9b716, type: 3}
   animator: {fileID: 7020079518808229359}
   minRunVal: 0.1
+  outline: 0.035
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &3953461344492900457
 PrefabInstance:
   m_ObjectHideFlags: 0

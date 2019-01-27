@@ -76,7 +76,12 @@ ModelImporter:
     7400000: Take 001
     9500000: //RootNode
     13700000: deer_1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Deer_mat
+    second: {fileID: 2100000, guid: 75214a001cbd72d4eb45ddb7137a5d4f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -156,7 +161,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
+    previousCalculatedGlobalScale: 0.099999994
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
