@@ -6,55 +6,37 @@ ModelImporter:
     100000: Cabeza
     100002: Cola
     100004: Cuello
-    100006: Cuello 1
-    100008: Cuerpo
-    100010: Cuerpo 1
-    100012: KEY
-    100014: //RootNode
-    100016: Pata_DD
-    100018: Pata_DD1
-    100020: Pata_DD2
-    100022: Pata_DD2 1
-    100024: Pata_DI
-    100026: Pata_DI1
-    100028: Pata_DI2
-    100030: Pata_DI2 1
-    100032: Pata_TD
-    100034: Pata_TD1
-    100036: Pata_TD2
-    100038: Pata_TD2 1
-    100040: Pata_TI
-    100042: Pata_TI1
-    100044: Pata_TI2
-    100046: Pata_TI2 1
-    100048: polySurface1
+    100006: Cuerpo
+    100008: //RootNode
+    100010: Pata_DD1
+    100012: Pata_DD2
+    100014: Pata_DI1
+    100016: Pata_DI2
+    100018: Pata_TD1
+    100020: Pata_TD2
+    100022: Pata_TI1
+    100024: Pata_TI2
+    100026: polySurface1
     400000: Cabeza
     400002: Cola
     400004: Cuello
-    400006: Cuello 1
-    400008: Cuerpo
-    400010: Cuerpo 1
-    400012: KEY
-    400014: //RootNode
-    400016: Pata_DD
-    400018: Pata_DD1
-    400020: Pata_DD2
-    400022: Pata_DD2 1
-    400024: Pata_DI
-    400026: Pata_DI1
-    400028: Pata_DI2
-    400030: Pata_DI2 1
-    400032: Pata_TD
-    400034: Pata_TD1
-    400036: Pata_TD2
-    400038: Pata_TD2 1
-    400040: Pata_TI
-    400042: Pata_TI1
-    400044: Pata_TI2
-    400046: Pata_TI2 1
-    400048: polySurface1
+    400006: Cuerpo
+    400008: //RootNode
+    400010: Pata_DD1
+    400012: Pata_DD2
+    400014: Pata_DI1
+    400016: Pata_DI2
+    400018: Pata_TD1
+    400020: Pata_TD2
+    400022: Pata_TI1
+    400024: Pata_TI2
+    400026: polySurface1
+    2100000: lambert4
+    2100002: lambert2
+    4300000: polySurface1
     7400000: Take 001
     9500000: //RootNode
+    13700000: polySurface1
   externalObjects: {}
   materials:
     importMaterials: 1

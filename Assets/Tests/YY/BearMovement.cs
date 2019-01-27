@@ -16,12 +16,14 @@ public class BearMovement : MonoBehaviour
     public UnityEvent Roar;
 
     public GameObject bearShout;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
         CurrentSpeed = speed;
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -39,8 +41,9 @@ public class BearMovement : MonoBehaviour
         cameraFront.y = 0;
         cameraRight.Normalize();
         cameraFront.Normalize();
-        body.AddForce(cameraFront * Input.GetAxis("Vertical") * CurrentSpeed *body.mass);
-        body.AddForce(cameraRight * Input.GetAxis("Horizontal") * CurrentSpeed * body.mass);
+        // body.AddForce(cameraFront * Input.GetAxis("Vertical") * CurrentSpeed *body.mass);
+        // body.AddForce(cameraRight * Input.GetAxis("Horizontal") * CurrentSpeed * body.mass);
+        anim.SetFloat("speed", body.velocity.magnitude);
         //transform.LookAt(transform.forward); // now just look at it. (remember that it is assumed up is Vector3.up.
     }
     void CheckInput()
@@ -48,6 +51,7 @@ public class BearMovement : MonoBehaviour
         if (Input.GetAxis("GaiaRoar") > 0.0f) {
             AnimalShout.Emmit(gameObject, bearShout, LookDirection);
             Roar?.Invoke();
+            anim.SetTrigger("attacking");
         }
     }
     void Look()
@@ -55,7 +59,7 @@ public class BearMovement : MonoBehaviour
         if (body.velocity.magnitude > lookThreshold)
             LookDirection = body.velocity;
 
-        transform.LookAt(transform.position + LookDirection);
+        //transform.LookAt(transform.position + LookDirection);
     }
 
     public void ResetSpeed()

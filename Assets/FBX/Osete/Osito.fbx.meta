@@ -3,12 +3,39 @@ guid: 070fe0639e6f7624981722310c7a5dc9
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: Osito
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Osito
+    100000: Cabeza
+    100002: Cola
+    100004: Cuello
+    100006: Cuerpo
+    100008: //RootNode
+    100010: Pata_DD1
+    100012: Pata_DD2
+    100014: Pata_DI1
+    100016: Pata_DI2
+    100018: Pata_TD1
+    100020: Pata_TD2
+    100022: Pata_TI1
+    100024: Pata_TI2
+    100026: polySurface1
+    400000: Cabeza
+    400002: Cola
+    400004: Cuello
+    400006: Cuerpo
+    400008: //RootNode
+    400010: Pata_DD1
+    400012: Pata_DD2
+    400014: Pata_DI1
+    400016: Pata_DI2
+    400018: Pata_TD1
+    400020: Pata_TD2
+    400022: Pata_TI1
+    400024: Pata_TI2
+    400026: polySurface1
+    2100000: lambert4
+    2100002: lambert2
+    4300000: polySurface1
+    9500000: //RootNode
+    13700000: polySurface1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -61,8 +88,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -89,7 +116,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
