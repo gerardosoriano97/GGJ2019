@@ -25,6 +25,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Cutoff: 0.5
+    - _DistanceOffset: 15
     - _TransAmbient: 0.2
     - _TransDirect: 1
     - _TransNormalDistortion: 0.1
@@ -32,4 +33,5 @@ Material:
     - _TransShadow: 0.9
     - _Translucency: 1
     - __dirty: 0
+    - _useFade: 0
     m_Colors: []
