@@ -54,7 +54,7 @@ Material:
     - _albedoOR: 0
     - _albedoOr: 0
     - _albedoOrCo: 0
-    - _albedoOrColor: 1
+    - _albedoOrColor: 0
     - _albedoo: 0
     - _useAlbedoColor: 0
     - _useVertexColor: 0
@@ -63,7 +63,7 @@ Material:
     - _vertColorO: 0
     - _vertColorOrAlbe: 0
     - _vertColorOrAlbed: 0
-    - _vertColorOrAlbedo: 1
+    - _vertColorOrAlbedo: 0
     m_Colors:
     - _AlbedoColor: {r: 1, g: 0, b: 0, a: 0}
     - _OutlienColor: {r: 0, g: 0, b: 0, a: 0}
