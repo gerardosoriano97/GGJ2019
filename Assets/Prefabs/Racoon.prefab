@@ -57,15 +57,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400024, guid: 32ae81c2214e6bc41bd02af1757170ad, type: 3}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400024, guid: 32ae81c2214e6bc41bd02af1757170ad, type: 3}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400024, guid: 32ae81c2214e6bc41bd02af1757170ad, type: 3}
       propertyPath: m_LocalScale.z
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 32ae81c2214e6bc41bd02af1757170ad, type: 3}
       propertyPath: m_Bones.Array.data[0]
