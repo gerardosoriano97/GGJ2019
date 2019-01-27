@@ -6,7 +6,7 @@ public class Tree : MonoBehaviour
 {
     public Shaker shaker;
     new public Rigidbody rigidbody;
-    public int Health { get; private set; } = 3;
+    public int health = 3;
     public float dieForce = 1.0f;
     public Vector3 dieForceOffset = Vector3.zero;
     public Collider trigger;
@@ -33,12 +33,12 @@ public class Tree : MonoBehaviour
 
     public void Hit(Lumberjack lumberjack)
     {
-        Health--;
-        if(Health == 0)
+        health--;
+        if(health == 0)
         {
             Fall(lumberjack);
         }
-        else if(Health > 0){
+        else if(health > 0){
             shaker?.Shake();
         }
     }
@@ -58,5 +58,5 @@ public class Tree : MonoBehaviour
     }
 
     public bool IsDead
-        => this.Health < 0;
+        => this.health < 0;
 }

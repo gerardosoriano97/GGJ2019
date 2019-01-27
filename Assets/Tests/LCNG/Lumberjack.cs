@@ -24,6 +24,8 @@ public class Lumberjack : MonoBehaviour
     public Vector3 ScaredGoal { get; private set; }
     Vector3 currentScaredVelocity = Vector3.zero;
 
+    Vector3 initialCenter;
+
     private void Awake()
     {
         Instance = this;
@@ -32,6 +34,11 @@ public class Lumberjack : MonoBehaviour
     void Start()
     {
         attackTimer.Start(this);
+        initialCenter = MainTree.Center + new Vector3(
+            Random.Range(-1.0f,1.0f),
+            Random.Range(-1.0f,1.0f),
+            Random.Range(-1.0f,1.0f)
+            );
     }
 
     public void AttackTree()
@@ -129,7 +136,7 @@ public class Lumberjack : MonoBehaviour
 
     public void GotoCenter()
     {
-        goal = MainTree.Center;
+        goal = initialCenter;
     }
 
     public void Push(AnimalShout shout)

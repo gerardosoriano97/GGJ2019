@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shaker: {fileID: 4701763143305468289}
   rigidbody: {fileID: 3346976262162065181}
+  health: 15
   dieForce: 0.2
   dieForceOffset: {x: 0, y: 1, z: 0}
   trigger: {fileID: 9178165197613537026}

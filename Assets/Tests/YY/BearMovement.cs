@@ -39,8 +39,8 @@ public class BearMovement : MonoBehaviour
         cameraFront.y = 0;
         cameraRight.Normalize();
         cameraFront.Normalize();
-        body.AddForce(cameraFront * Input.GetAxis("Vertical") * CurrentSpeed);
-        body.AddForce(cameraRight * Input.GetAxis("Horizontal") * CurrentSpeed);
+        body.AddForce(cameraFront * Input.GetAxis("Vertical") * CurrentSpeed *body.mass);
+        body.AddForce(cameraRight * Input.GetAxis("Horizontal") * CurrentSpeed * body.mass);
         //transform.LookAt(transform.forward); // now just look at it. (remember that it is assumed up is Vector3.up.
     }
     void CheckInput()
