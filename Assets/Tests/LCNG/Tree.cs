@@ -33,6 +33,9 @@ public class Tree : MonoBehaviour
 
     public void Hit(Lumberjack lumberjack)
     {
+
+        // VFX RED REACTION
+
         health--;
         if(health == 0)
         {
@@ -47,6 +50,8 @@ public class Tree : MonoBehaviour
     {
         Destroy(trigger);
         DestroyImmediate(shaker);
+
+        // VFX PARTICLES LEAFS
 
         rigidbody.isKinematic = false;
         rigidbody.useGravity = true;

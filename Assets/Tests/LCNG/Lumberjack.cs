@@ -51,6 +51,11 @@ public class Lumberjack : MonoBehaviour
                 GotoCenter();
                 animator.SetBool("cutting", false);
             }
+
+            // VFX HIT PARTICLES
+
+            
+
             //Target.shaker.Shake();
         }
         //Debug.Log("Ataque al arbol...");
