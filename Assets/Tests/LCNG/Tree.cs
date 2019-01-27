@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Tree : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Tree : MonoBehaviour
     public Vector3 dieForceOffset = Vector3.zero;
     public Collider trigger;
     public Timer dieTimer;
+    public UnityEvent OnFall;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +57,7 @@ public class Tree : MonoBehaviour
         sideVec.Normalize();
         rigidbody.AddForceAtPosition(sideVec * dieForce, dieForceOffset, ForceMode.Impulse);
         dieTimer.Start(this);
+        OnFall?.Invoke();
     }
 
     public bool IsDead
