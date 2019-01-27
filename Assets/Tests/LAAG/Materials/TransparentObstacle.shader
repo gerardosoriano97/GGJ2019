@@ -1,9 +1,11 @@
 // Made with Amplify Shader Editor
 // Available at the Unity Asset Store - http://u3d.as/y3X 
-Shader "TransparentObstacle"
+Shader "Custom/TransparentObstacle"
 {
 	Properties
 	{
+		_useFade("useFade", Range( 0 , 1)) = 1
+		_DistanceOffset("DistanceOffset", Float) = 0
 		[HideInInspector] __dirty( "", Int ) = 1
 	}
 
@@ -23,6 +25,9 @@ Shader "TransparentObstacle"
 			float4 screenPos;
 		};
 
+		uniform float _DistanceOffset;
+		uniform float _useFade;
+
 		void vertexDataFunc( inout appdata_full v, out Input o )
 		{
 			UNITY_INITIALIZE_OUTPUT( Input, o );
@@ -32,14 +37,15 @@ Shader "TransparentObstacle"
 		void surf( Input i , inout SurfaceOutputStandard o )
 		{
 			o.Albedo = i.vertexColor.rgb;
-			float cameraDepthFade15 = (( i.eyeDepth -_ProjectionParams.y - 5.0 ) / 1.0);
+			float cameraDepthFade15 = (( i.eyeDepth -_ProjectionParams.y - _DistanceOffset ) / 1.0);
 			float clampResult34 = clamp( cameraDepthFade15 , 0.0 , 1.0 );
 			float4 ase_screenPos = float4( i.screenPos.xyz , i.screenPos.w + 0.00000000001 );
 			float4 ase_screenPosNorm = ase_screenPos / ase_screenPos.w;
 			ase_screenPosNorm.z = ( UNITY_NEAR_CLIP_VALUE >= 0 ) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
 			float temp_output_25_0 = length( (float2( -1,-1 ) + ((ase_screenPosNorm).xy - float2( 0,0 )) * (float2( 1,1 ) - float2( -1,-1 )) / (float2( 1,1 ) - float2( 0,0 ))) );
 			float clampResult33 = clamp( ( clampResult34 + pow( temp_output_25_0 , 4.0 ) ) , 0.0 , 1.0 );
-			o.Alpha = clampResult33;
+			float lerpResult41 = lerp( 1.0 , clampResult33 , _useFade);
+			o.Alpha = lerpResult41;
 		}
 
 		ENDCG
@@ -125,29 +131,38 @@ Shader "TransparentObstacle"
 }
 /*ASEBEGIN
 Version=16200
-249;123;1245;754;966.5912;68.18646;1;True;False
-Node;AmplifyShaderEditor.ScreenPosInputsNode;23;-1347.849,543.2958;Float;False;0;False;0;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.ComponentMaskNode;27;-1132.709,572.012;Float;False;True;True;False;False;1;0;FLOAT4;0,0,0,0;False;1;FLOAT2;0
-Node;AmplifyShaderEditor.TFHCRemapNode;24;-927.2119,589.2256;Float;False;5;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;2;FLOAT2;1,1;False;3;FLOAT2;-1,-1;False;4;FLOAT2;1,1;False;1;FLOAT2;0
-Node;AmplifyShaderEditor.LengthOpNode;25;-708.6121,565.5258;Float;True;1;0;FLOAT2;0,0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.CameraDepthFade;15;-938.1601,341.6016;Float;False;3;2;FLOAT3;0,0,0;False;0;FLOAT;1;False;1;FLOAT;5;False;1;FLOAT;0
-Node;AmplifyShaderEditor.PowerNode;28;-517.8721,473.8677;Float;True;2;0;FLOAT;0;False;1;FLOAT;4;False;1;FLOAT;0
-Node;AmplifyShaderEditor.ClampOpNode;34;-544.2555,231.8465;Float;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;1;FLOAT;0
-Node;AmplifyShaderEditor.SimpleAddOpNode;32;-245.2611,376.7433;Float;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.OneMinusNode;26;-512.675,703.2447;Float;True;1;0;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.ClampOpNode;33;24.64423,215.7076;Float;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;1;FLOAT;0
+203;1;1585;914;1560.085;321.0279;1.253645;True;False
+Node;AmplifyShaderEditor.ScreenPosInputsNode;23;-1595.013,452.1343;Float;False;0;False;0;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ComponentMaskNode;27;-1368.153,511.5311;Float;False;True;True;False;False;1;0;FLOAT4;0,0,0,0;False;1;FLOAT2;0
+Node;AmplifyShaderEditor.RangedFloatNode;44;-1340.147,309.5081;Float;False;Property;_DistanceOffset;DistanceOffset;1;0;Create;True;0;0;False;0;0;15;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.TFHCRemapNode;24;-1162.656,528.7446;Float;False;5;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;2;FLOAT2;1,1;False;3;FLOAT2;-1,-1;False;4;FLOAT2;1,1;False;1;FLOAT2;0
+Node;AmplifyShaderEditor.LengthOpNode;25;-944.056,505.0449;Float;True;1;0;FLOAT2;0,0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.CameraDepthFade;15;-1080.723,341.6016;Float;False;3;2;FLOAT3;0,0,0;False;0;FLOAT;1;False;1;FLOAT;15;False;1;FLOAT;0
+Node;AmplifyShaderEditor.ClampOpNode;34;-686.8179,231.8465;Float;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.PowerNode;28;-753.3159,413.3867;Float;True;2;0;FLOAT;0;False;1;FLOAT;4;False;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleAddOpNode;32;-516.8237,371.7433;Float;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;43;-191.0491,220.0212;Float;False;Constant;_Float2;Float 2;1;0;Create;True;0;0;False;0;1;0;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.ClampOpNode;33;-337.9183,301.7074;Float;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;37;-302.2106,517.1329;Float;False;Property;_useFade;useFade;0;0;Create;True;0;0;False;0;1;0;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.VertexColorNode;14;66.5735,-65.74885;Float;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;323.6653,-72.27799;Float;False;True;2;Float;ASEMaterialInspector;0;0;Standard;TransparentObstacle;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Transparent;0.5;True;True;0;False;Transparent;;Transparent;ForwardOnly;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;False;2;15;10;25;False;0.5;True;2;5;False;-1;10;False;-1;0;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;-1;-1;-1;-1;0;False;0;0;False;-1;-1;0;False;-1;0;0;0;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
+Node;AmplifyShaderEditor.TFHCIf;39;-212.2106,-131.8671;Float;False;6;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.OneMinusNode;26;-748.1188,642.7637;Float;True;1;0;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.LerpOp;41;-82.23286,323.2894;Float;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;323.6653,-72.27799;Float;False;True;2;Float;ASEMaterialInspector;0;0;Standard;Custom/TransparentObstacle;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Transparent;0.5;True;True;0;False;Transparent;;Transparent;ForwardOnly;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;False;2;15;10;25;False;0.5;True;2;5;False;-1;10;False;-1;0;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;-1;-1;-1;-1;0;False;0;0;False;-1;-1;0;False;-1;0;0;0;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
 WireConnection;27;0;23;0
 WireConnection;24;0;27;0
 WireConnection;25;0;24;0
-WireConnection;28;0;25;0
+WireConnection;15;1;44;0
 WireConnection;34;0;15;0
+WireConnection;28;0;25;0
 WireConnection;32;0;34;0
 WireConnection;32;1;28;0
-WireConnection;26;0;25;0
 WireConnection;33;0;32;0
+WireConnection;26;0;25;0
+WireConnection;41;0;43;0
+WireConnection;41;1;33;0
+WireConnection;41;2;37;0
 WireConnection;0;0;14;0
-WireConnection;0;9;33;0
+WireConnection;0;9;41;0
 ASEEND*/
-//CHKSM=C89D975021931B9632E5EFC3C9F44939B615E4B1
+//CHKSM=C748652B36E58BD1794631519D3C3D9F422EB97E
