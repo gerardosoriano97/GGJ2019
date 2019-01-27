@@ -27,10 +27,20 @@ public class Animal : MonoBehaviour
     public bool Running { get; private set; } = false;
     public float minRunVal = 0.3f;
 
+    public List<Color> colors = new List<Color>() {
+        new Color(1.0f, 0.0f, 0.1411f),
+        new Color(0.2f, 0.7843f, 0.0f),
+        new Color(0.8588f, 0.8509f, 0.0f),
+        new Color(0.0f, 0.4784f, 0.8588f)
+    };
 
     void Start()
     {
+        GetComponentInChildren<Renderer>().material.SetColor("_OutlienColor", colors[(int)specie]);
+
         BearCry.Instance.gaiaCry.AddListener(GaiaAttend);
+        BearCry.Instance.outlineIn.AddListener(OutlineIn);
+        BearCry.Instance.outlineOut.AddListener(OutlineOut);
     }
     // Update is called once per frame
     void Update()
@@ -75,6 +85,14 @@ public class Animal : MonoBehaviour
             agent.SetDestination(BearCry.Instance.transform.position);
             attending = true;
         }
+    }
+
+    void OutlineIn() {
+        GetComponentInChildren<Renderer>().material.SetFloat("_Outline", 0.013f);
+    }
+
+    void OutlineOut() {
+        //GetComponentInChildren<Renderer>().material.SetFloat("_Outline", 0.0f);
     }
 
     IEnumerator AttackRoutine() {

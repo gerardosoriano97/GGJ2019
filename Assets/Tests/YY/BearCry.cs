@@ -6,10 +6,21 @@ using UnityEngine.Events;
 [System.Serializable]
 public class GaiaCry : UnityEvent<int>{}
 
+[System.Serializable]
+public class OutlineIn : UnityEvent {}
+
+[System.Serializable]
+public class OutlineOut : UnityEvent {}
+
 public class BearCry : MonoBehaviour
 {
     [SerializeField]
     public GaiaCry gaiaCry;
+    [SerializeField]
+    public OutlineIn outlineIn;
+    [SerializeField]
+    public OutlineOut outlineOut;
+
     public static BearCry Instance {get; private set;}
     public IEnumerator bearCryCooldown;
     private bool onCooldown = false;
@@ -36,6 +47,7 @@ public class BearCry : MonoBehaviour
         if (Input.GetAxis("GaiaCry") > 0.0f) {
 
             // VFX SHOW OUTLINE ON ENTITIES
+            outlineIn?.Invoke();
 
             if (Input.GetAxis("Fire1") > 0.0f) {
                 //Sonido de venado
@@ -53,6 +65,8 @@ public class BearCry : MonoBehaviour
                 //Sonido de mapache
                 gaiaCry?.Invoke(3);
             }
+        } else {
+            outlineOut?.Invoke();
         }
     }
 
