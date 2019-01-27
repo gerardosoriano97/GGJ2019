@@ -36,7 +36,7 @@ public class Animal : MonoBehaviour
     void Update()
     {
         if (attending) {
-            Debug.Log(agent.remainingDistance);
+            //Debug.Log(agent.remainingDistance);
             if (agent.remainingDistance <= 1.0f) {
                 attending = false;
             }
