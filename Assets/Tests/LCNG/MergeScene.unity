@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -367,7 +367,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh84932
+  m_Name: pb_Mesh5270
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -2185,7 +2185,7 @@ MonoBehaviour:
   spawnDelay: 2
   spawnVariation: 1
   prefab: {fileID: 501752431770617270, guid: 334e82714b2b3a6418d529984b98e9cc, type: 3}
-  poolSize: 10
+  poolSize: 1
   pool: []
   OnSpawn:
     m_PersistentCalls:
@@ -3653,7 +3653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2059525137
 Transform:
   m_ObjectHideFlags: 0
@@ -3662,7 +3662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059525136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1457339042}
@@ -3992,7 +3992,7 @@ PrefabInstance:
     - target: {fileID: 501752431770617265, guid: 334e82714b2b3a6418d529984b98e9cc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.93
+      value: 3.88
       objectReference: {fileID: 0}
     - target: {fileID: 501752431770617265, guid: 334e82714b2b3a6418d529984b98e9cc,
         type: 3}
@@ -4002,7 +4002,7 @@ PrefabInstance:
     - target: {fileID: 501752431770617265, guid: 334e82714b2b3a6418d529984b98e9cc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.35
+      value: 9.47
       objectReference: {fileID: 0}
     - target: {fileID: 501752431770617265, guid: 334e82714b2b3a6418d529984b98e9cc,
         type: 3}
