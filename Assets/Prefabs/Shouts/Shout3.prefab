@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2080819907970160418}
   - component: {fileID: 4795194787413847875}
   m_Layer: 0
-  m_Name: BearShout
+  m_Name: Shout3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2585365835443352065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -65,8 +65,8 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     time: 300
-  pushForce: 6
-  speed: 8
+  pushForce: 2
+  speed: 4
 --- !u!135 &2585365835443352064
 SphereCollider:
   m_ObjectHideFlags: 0
