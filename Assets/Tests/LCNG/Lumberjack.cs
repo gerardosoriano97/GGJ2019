@@ -49,6 +49,7 @@ public class Lumberjack : MonoBehaviour
             if (Target.IsDead)
             {
                 GotoCenter();
+                animator.SetBool("cutting", false);
             }
             //Target.shaker.Shake();
         }
@@ -71,6 +72,10 @@ public class Lumberjack : MonoBehaviour
             GotoCenter();
         }
         agent.SetDestination(goal);
+
+        if (Target != null && agent.remainingDistance <= 0.0f) {
+            animator.SetBool("cutting", true);
+        }
         //transform.LookAt(goal);
         UpdateScaring();
         UpdateAnimator();
