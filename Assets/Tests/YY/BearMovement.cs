@@ -57,6 +57,7 @@ public class BearMovement : MonoBehaviour
             AnimalShout.Emmit(gameObject, bearShout, LookDirection);
             Roar?.Invoke();
             anim.SetTrigger("attacking");
+            // VFX SHOUTING????
         }
     }
     void Look()

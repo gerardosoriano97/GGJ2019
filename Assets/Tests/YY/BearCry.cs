@@ -34,6 +34,9 @@ public class BearCry : MonoBehaviour
         // }
 
         if (Input.GetAxis("GaiaCry") > 0.0f) {
+
+            // VFX SHOW OUTLINE ON ENTITIES
+
             if (Input.GetAxis("Fire1") > 0.0f) {
                 gaiaCry?.Invoke(0);
             }
