@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8492252577984935751}
   - component: {fileID: 6897442154012953313}
   - component: {fileID: 2939900201907490231}
+  - component: {fileID: 3071174388054337925}
   m_Layer: 10
   m_Name: Deer
   m_TagString: Animal
@@ -129,6 +130,20 @@ MonoBehaviour:
   minRunVal: 0.1
   outline: 0.035
   outlineColor: {r: 0, g: 0, b: 0, a: 0}
+  vfx_shout: {fileID: 7584214444302654958, guid: 95f735d21ac391c4e89f000d5d394e81,
+    type: 3}
+--- !u!114 &3071174388054337925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501752431770617270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 586e8f262236f174eafd32472f0b0213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3953461344492900457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136,10 +151,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 501752431770617265}
     m_Modifications:
-    - target: {fileID: 100002, guid: 297d407466eb7004ba49996132287d97, type: 3}
-      propertyPath: m_Name
-      value: deer_run
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 297d407466eb7004ba49996132287d97, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -183,6 +194,10 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 297d407466eb7004ba49996132287d97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 297d407466eb7004ba49996132287d97, type: 3}
+      propertyPath: m_Name
+      value: deer_run
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 297d407466eb7004ba49996132287d97, type: 3}
       propertyPath: m_Controller

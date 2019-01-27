@@ -18,7 +18,7 @@ public class AutoTransparent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mr = GetComponent<MeshRenderer>();      
+        mr = GetComponentInChildren<MeshRenderer>();
         transparentMaterial = mr.material;
 
     }
@@ -60,6 +60,10 @@ public class AutoTransparent : MonoBehaviour
             if(transparent != null && transparent.HasProperty("_useFade"))
             {
                 result = true;
+            }
+            else
+            {
+                Debug.Log("No usable material");
             }
         }
         return result;

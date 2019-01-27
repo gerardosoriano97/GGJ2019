@@ -9,6 +9,7 @@ TagManager:
   - Lumberjack
   - BearShout
   - Animal
+  - TransparentMesh
   layers:
   - Default
   - TransparentFX

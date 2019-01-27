@@ -15,6 +15,9 @@ public class Tree : MonoBehaviour
     public UnityEvent OnFall;
     public Timer soundCooldown;
     public bool CanPlaySound { get; private set; } = true;
+    SpawnVFX spawnVfx;
+    public GameObject vfx_leafs;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +60,8 @@ public class Tree : MonoBehaviour
         DestroyImmediate(shaker);
 
         // VFX PARTICLES LEAFS
+        if (spawnVfx != null && vfx_leafs != null)
+            spawnVfx.SpawnAsChild(vfx_leafs, transform, new Vector3(0.0f, 3.0f, 0.0f), Quaternion.identity, false);
 
         rigidbody.isKinematic = false;
         rigidbody.useGravity = true;
