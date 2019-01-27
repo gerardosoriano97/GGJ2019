@@ -41,8 +41,8 @@ public class BearMovement : MonoBehaviour
         cameraFront.y = 0;
         cameraRight.Normalize();
         cameraFront.Normalize();
-        // body.AddForce(cameraFront * Input.GetAxis("Vertical") * CurrentSpeed *body.mass);
-        // body.AddForce(cameraRight * Input.GetAxis("Horizontal") * CurrentSpeed * body.mass);
+        body.AddForce(cameraFront * Input.GetAxis("Vertical") * CurrentSpeed *body.mass);
+        body.AddForce(cameraRight * Input.GetAxis("Horizontal") * CurrentSpeed * body.mass);
         anim.SetFloat("speed", body.velocity.magnitude);
         //transform.LookAt(transform.forward); // now just look at it. (remember that it is assumed up is Vector3.up.
     }
@@ -58,6 +58,9 @@ public class BearMovement : MonoBehaviour
     {
         if (body.velocity.magnitude > lookThreshold)
             LookDirection = body.velocity;
+
+        LookDirection = new Vector3(LookDirection.x, 0.0f, LookDirection.z).normalized;
+        transform.rotation = Quaternion.LookRotation(LookDirection);
 
         //transform.LookAt(transform.position + LookDirection);
     }
